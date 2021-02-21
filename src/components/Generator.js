@@ -35,7 +35,7 @@ const Generator = () => {
   // const [hasNumber, setHasNumber] = useState(true);
   // const [hasSymbol, setHasSymbol] = useState(true);
   // const [excludeChars, setExcludeChars] = useState("");
-  const [setting, setSetting] = useState({});
+  // const [setting, setSetting] = useState({});
   const [isConflict, setIsConflict] = useState(false);
 
   const getRandomUpper = () => {
@@ -64,14 +64,15 @@ const Generator = () => {
 
     let genPassword = "";
     let typeCount = upper + lower + number + symbol;
+    // const typeArrc = [{ upper }, { lower }, { number }, { symbol }];
     const typeArr = [{ upper }, { lower }, { number }, { symbol }].filter(
       (value) => Object.values(value)[0]
       // filter [0] = value true
     );
-    // console.log(typeCount, typeArr);
+    // console.log(typeCount, typeArrc);
 
     if (typeCount == 0) {
-      alert("You don't choose any type, please check options.");
+      alert("You don't choose any type, please check options (ˊ˙w˙ˋ)");
     }
 
     const exChars = new Set();
@@ -82,7 +83,7 @@ const Generator = () => {
         genPassword.length == 0
       ) {
         alert(
-          "Ohh... Your exclude chars are conflict with options. Please to check your setting."
+          "Ohh... Your exclude chars are conflict with options. Check again, please ._./"
         );
         setIsConflict(true);
         break;
@@ -119,7 +120,7 @@ const Generator = () => {
   // }, [formState]);
 
   const passWordSetting = (data) => {
-    setSetting(data);
+    // setSetting(data);
     generatePassword(data);
     setIsConflict(false);
   };
@@ -127,7 +128,7 @@ const Generator = () => {
   return (
     <Flex alignItems="center" justifyContent="center">
       <Box
-        width={[1, 1 / 2, 1 / 4]}
+        width={[0.9, 0.5, 0.4]}
         m="auto"
         mt={5}
         p={3}
