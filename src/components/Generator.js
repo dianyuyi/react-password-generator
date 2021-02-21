@@ -127,7 +127,7 @@ const Generator = () => {
   return (
     <Flex alignItems="center" justifyContent="center">
       <Box
-        width={[1, 1 / 2]}
+        width={[1, 1 / 2, 1 / 4]}
         m="auto"
         mt={5}
         p={3}
